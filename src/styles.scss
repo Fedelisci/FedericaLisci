@@ -1,0 +1,72 @@
+@import "bootstrap/scss/functions";
+@import "bootstrap/scss/variables";
+@import "bootstrap/scss/mixins";
+@import "bootstrap/scss/utilities";
+
+$all-colors: map-merge-multiple($blues, $indigos, $purples, $pinks, $reds, $oranges, $yellows, $greens, $teals, $cyans);
+
+$utilities: map-merge(
+  $utilities,
+  (
+    "color": map-merge(
+      map-get($utilities, "color"),
+      (
+        values: map-merge(
+          map-get(map-get($utilities, "color"), "values"),
+          (
+            $all-colors
+          ),
+        ),
+      ),
+    ),
+  )
+);
+
+$colors: (
+  "blue":       $blue,
+  "indigo":     $indigo,
+  "purple":     $purple,
+  "pink":       $pink,
+  "red":        $red,
+  "orange":     $orange,
+  "yellow":     $yellow,
+  "green":      $green,
+  "teal":       $teal,
+  "cyan":       $cyan,
+  "white":      $white,
+  "gray":       $gray-100,
+  "gray-dark":  $gray-800
+);
+
+body{
+  background-image: url("./assets/sfondo.jpg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  font-family: 'Poppins', sans-serif;
+  background-color: $gray-100;
+ // background-attachment: fixed;
+  color: $gray-800;
+}
+.icon-color{
+    color: $indigo-400;
+}
+.card-page{
+    border: none
+}
+.background-black{
+  background: $gray-900;
+}
+.shadow{
+  box-shadow: 10px 5px 5px red;
+}
+.title{
+  color: white
+}
+.link{
+  text-decoration: none;
+  color:  $gray-800;
+}
+.linkedin{
+  color: $blue-700
+}
+@import "bootstrap/scss/utilities/api";
